@@ -1,7 +1,7 @@
 package com.lojinha.lojinha.resources;
 
-import com.lojinha.lojinha.entities.User;
-import com.lojinha.lojinha.services.UserService;
+import com.lojinha.lojinha.entities.Product;
+import com.lojinha.lojinha.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,23 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/users")
-public class UserResource {
+@RequestMapping(value = "/products")
+public class ProductResource {
 
     @Autowired
-    private UserService service;
+    private ProductService service;
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll(){
-        List<User> list = service.findAll();
+    public ResponseEntity<List<Product>> findAll(){
+        List<Product> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(
             value = "/{id}"
     )
-    public ResponseEntity<User> findById(@PathVariable Long id){
-        User obj = service.findById(id);
+    public ResponseEntity<Product> findById(@PathVariable Long id){
+        Product obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 }
