@@ -1,7 +1,6 @@
 package com.lojinha.lojinha.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.lojinha.lojinha.resources.OrderResource;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
